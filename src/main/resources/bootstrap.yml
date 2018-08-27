@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: BDC-CONT-CDR
+  http:
+    encoding: { charset: UTF-8, enable: true, force: true }
+
+  cloud:
+     config:
+        uri: http://10.248.50.227:18762/
+        name: BDC-CONT-CDR
+        profile: dev
+        label: master
+        fail-fast: true
+security:
+  basic:
+    enabled: false
