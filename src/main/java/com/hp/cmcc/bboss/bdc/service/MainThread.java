@@ -35,7 +35,7 @@ public class MainThread {
 	    List<String> taskSql = new LinkedList<String>();
 	    List<BbdcTypeCdr> doneList = new LinkedList<BbdcTypeCdr>();
 		List<BbdcTypeCdr> errList = new LinkedList<BbdcTypeCdr>();
-		String errInfoTableName = "";//错误信息表中可以在该表中查到此记录；
+		String errInfoTableName = "";//错误信息可以在该表中查到此记录；
 		int checkNum = 0;
 		rule.sort(new Comparator<BbdcTypeCdr>() {
 			@Override
@@ -45,7 +45,7 @@ public class MainThread {
 		});
 		
 		for(BbdcTypeCdr cdr : rule) {
-			if("CORPSMS".equals(cdr.getValName().trim())) {
+			if(!"CONTERROR".equals(cdr.getValName().trim())) {
 				if("ERR_INFO_TABLE_NAME".equals(cdr.getFieldName())) {
 					errInfoTableName = cdr.getDataFiller();
 				}else {
@@ -93,6 +93,7 @@ public class MainThread {
 	    }catch (InterruptedException | ExecutionException  e) {
 			L.error("threads exception!",e);
 		}
+	    //向db2f表中插入一天任务
 	    String taskStr = "";
 	    try {
 		    if(errRecs.size() == 0) {
@@ -105,9 +106,6 @@ public class MainThread {
 	    	L.error("encode switch error!",e);
 	    }
 	    taskSql.add(taskStr);
-	    L.info("TASK_SQL:"+taskSql.get(0));
-	    
-	    L.info("result sql:"+doneRecs.get(0));
 	    
 	    bcr.setDoneRec(doneRecs);
 	    bcr.setErrRec(errRecs);

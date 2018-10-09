@@ -55,9 +55,9 @@ public class CheckAndCreateSqlStrImpl implements CheckAndCreateSqlStr {
 						value = cdr.getDataFiller().trim();
 					default : break;
 				}
-				if("ID".equals(cdr.getFieldName())) id = value;
-				if("TRAN_ID".equals(cdr.getFieldName())) value = tranId;
-				if("ERR_MARK".endsWith(cdr.getFieldName())){
+				if("ID".equals(cdr.getFieldName().trim())) id = value;
+				if("TRAN_ID".equals(cdr.getFieldName().trim())) value = tranId;
+				if("ERR_MARK".equals(cdr.getFieldName().trim())){
 					if(mark) {
 						value = cdr.getDataFiller();
 					}else {

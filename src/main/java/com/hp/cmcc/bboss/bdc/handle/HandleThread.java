@@ -12,7 +12,7 @@ import com.hp.cmcc.bboss.bdc.pojo.compare.BdcComRecordCheckResult;
 public class HandleThread implements Callable<BdcComRecordCheckResult>{
 	private static CheckAndCreateSqlStr checkAndCreateSqlStr = new CheckAndCreateSqlStrImpl();
 	private String record;
-	List<BbdcTypeCdr> list;
+	private List<BbdcTypeCdr> list;
 	private String fileName;
 	private long lineNum;
 	private String tranId;

@@ -32,9 +32,13 @@ public class CompareControl {
 			L.info(rec);
 		}
 		List<BbdcTypeCdr> rule = requestParamter.getRule();
+		for(BbdcTypeCdr cdr : rule){
+			L.info(cdr.toString());
+		}
 		String fileName = requestParamter.getFileName();
 		L.info("file name:"+fileName+",record count :"+fileBody.size());
 		String tranId = requestParamter.getTranId();
+		L.info("tranId:"+tranId);
 		if(Tools.IsBlank(fileName)) {
 			L.error("the file name is empty, pls check it!");
 			return null ;
@@ -51,6 +55,18 @@ public class CompareControl {
 			L.error("the check rule is empty, pls check it!");
 			return null ;
 		}
-		return threads.handle(fileBody, rule, fileName, tranId);
+		BdcCompareResult result = threads.handle(fileBody, rule, fileName, tranId);
+		for(String yes : result.getDoneRec()){
+			L.info("DoneRec:"+yes);
+		}
+		for(String err : result.getErrRec()){
+			L.info("ErrRec:"+err);
+		}
+		for(String report : result.getErrRecReport()){
+			L.info("RecReport:"+report);
+		}
+		L.info("taskSql:"+result.getTaskSql());
+		return result;
 	}
+	
 }

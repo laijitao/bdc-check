@@ -31,8 +31,6 @@ public class BbdcTypeCdr implements Serializable {
 	private String valType;      //字段所属部分（文件名，文件头，文件体，文件尾）
 	private String validateRegex;//校验正则表达式
 
-
-
 	public BbdcTypeCdr(long id, String valName, String valType, String fieldName, String fieldType, String fieldValue,
 			Long fieldIdx, Long fieldLen, String dataType, Long dataLen, String dataPattern, String dataSeparator,
 			String dataAlign, String dataFiller, String dataReplace, String validateRegex,

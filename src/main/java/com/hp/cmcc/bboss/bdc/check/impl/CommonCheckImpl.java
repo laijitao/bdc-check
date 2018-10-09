@@ -22,6 +22,9 @@ public class CommonCheckImpl implements com.hp.cmcc.bboss.bdc.check.CommonCheck 
 
 	@Override
 	public void fieldIFormatCheck(String field, BbdcTypeCdr cdr) throws CheckException {
+		if(Tools.IsBlank(cdr.getValidateRegex())){
+			return;
+		}
 		String regex = cdr.getValidateRegex().trim();
 		if(Tools.IsBlank(regex)) {
 			return;
