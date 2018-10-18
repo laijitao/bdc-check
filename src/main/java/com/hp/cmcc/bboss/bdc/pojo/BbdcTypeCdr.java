@@ -11,7 +11,7 @@ public class BbdcTypeCdr implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private long id;
-	private String dataAlign;    //对其方式
+	private String dataAlign;    //对齐方式
 	private String dataFiller;   //数据填充
 	private Long dataLen;        //数据长度
 	private String dataPattern;  //

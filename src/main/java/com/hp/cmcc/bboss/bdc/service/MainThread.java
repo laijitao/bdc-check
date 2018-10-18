@@ -93,13 +93,13 @@ public class MainThread {
 	    }catch (InterruptedException | ExecutionException  e) {
 			L.error("threads exception!",e);
 		}
-	    //向db2f表中插入一天任务
+	    //向db2f表中插入一条任务来生成记录级的错误报告
 	    String taskStr = "";
 	    try {
-		    if(errRecs.size() == 0) {
+		    if(errRecs.size() == 0) {//检验全部通过则插入空值
 		    	errRecReport.add("null,null,null,null,null,null,null,'"+tranId+"'");
 		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_DONE_SQL	, "\\?", tranId,Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
-		    }else {
+		    }else {//有校验不通过的则插入一条db2f任务
 		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_SQL	, "\\?", tranId,Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
 		    }
 	    } catch (UnsupportedEncodingException e) {

@@ -1,7 +1,6 @@
 package com.hp.cmcc.bboss.bdc.check.impl;
 
 import java.util.List;
-
 import com.hp.cmcc.bboss.bdc.check.BaseCheck;
 import com.hp.cmcc.bboss.bdc.check.CheckAndCreateSqlStr;
 import com.hp.cmcc.bboss.bdc.check.CommonCheck;
@@ -51,7 +50,7 @@ public class CheckAndCreateSqlStrImpl implements CheckAndCreateSqlStr {
 					case "DATABASE" :
 						value = fieldHandle.getValueFromDatabase(value,cdr);
 						break;
-					case"SYSTEM" :
+					case "SYSTEM" :
 						value = cdr.getDataFiller().trim();
 					default : break;
 				}
@@ -87,7 +86,7 @@ public class CheckAndCreateSqlStrImpl implements CheckAndCreateSqlStr {
 		}
 		
 		String recordStr = "";
-		if(!fieldNumMark) {
+		if(!fieldNumMark) {//字段数量不匹配时相关字段都填空
 			recordStr = id+",null,null,null,null,null,null,null,null,null,null,null,null,null,null,'"
 					+ tranId+"','F',null,null,null,null";
 		}else {
