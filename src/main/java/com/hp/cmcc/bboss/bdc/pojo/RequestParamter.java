@@ -2,7 +2,15 @@ package com.hp.cmcc.bboss.bdc.pojo;
 
 import java.io.Serializable;
 import java.util.List;
-
+/**
+ * 
+ * @ClassName: RequestParamter 
+ * @Description: 请求数据类，封装请求参数，包括文件体、校验规则、文件名和文件序号
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:51:41 
+ *
+ */
 public class RequestParamter implements Serializable {
 
 	/**

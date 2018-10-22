@@ -22,11 +22,32 @@ import com.hp.cmcc.bboss.bdc.utils.BaseUtil;
 import com.hp.cmcc.bboss.bdc.utils.PubData;
 import com.hp.cmcc.bboss.bdc.utils.Tools;
 
+/**
+ * 
+ * @ClassName: MainThread 
+ * @Description: 记录校验的主处理类，采用多线程同时处理多条数据，以提高文件处理的效率
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午9:30:22 
+ *
+ */
 @Service
 public class MainThread {
 	private static Logger L = LoggerFactory.getLogger(MainThread.class);
 	private static BaseUtil baseUtil = new BaseUtil();
 
+	/** 
+	 * @Title: handle 
+	 * @Description: 记录处理的主线程，对文件体进行校验后，如果有校验不通过的记录，则将校验通过的和不通过的分开返回，
+	 * 并附带一条db2f语句，如果全部校验通过，则返回校验后的记录，并附带一条空的db2f语句
+	 * @param @param fileBody
+	 * @param @param rule
+	 * @param @param fileName
+	 * @param @param tranId
+	 * @param @return    参数 
+	 * @return BdcCompareResult    返回类型 
+	 * @throws 
+	 */ 
 	public BdcCompareResult handle(List<String> fileBody, List<BbdcTypeCdr> rule, String fileName, String tranId) {
 		BdcCompareResult bcr = new BdcCompareResult();
 	    List<String> doneRecs = new LinkedList<String>();

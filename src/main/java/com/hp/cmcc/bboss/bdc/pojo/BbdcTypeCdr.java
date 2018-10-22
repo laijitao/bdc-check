@@ -4,9 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * The persistent class for the BBDC_TYPE_CDR database table.
  * 
+ * @ClassName: BbdcTypeCdr 
+ * @Description: 校验规则实体类
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:51:11 
+ *
  */
+ 
 public class BbdcTypeCdr implements Serializable {
 	private static final long serialVersionUID = 1L;
 

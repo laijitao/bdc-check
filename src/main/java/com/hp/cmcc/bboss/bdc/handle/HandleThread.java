@@ -8,7 +8,15 @@ import com.hp.cmcc.bboss.bdc.check.impl.CheckAndCreateSqlStrImpl;
 import com.hp.cmcc.bboss.bdc.exception.BdcComException;
 import com.hp.cmcc.bboss.bdc.pojo.BbdcTypeCdr;
 import com.hp.cmcc.bboss.bdc.pojo.compare.BdcComRecordCheckResult;
-
+/**
+ * 
+ * @ClassName: HandleThread 
+ * @Description: 检验线程，返回校验后的结果
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:48:50 
+ *
+ */
 public class HandleThread implements Callable<BdcComRecordCheckResult>{
 	private static CheckAndCreateSqlStr checkAndCreateSqlStr = new CheckAndCreateSqlStrImpl();
 	private String record;

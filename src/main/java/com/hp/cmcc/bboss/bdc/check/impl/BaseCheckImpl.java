@@ -4,7 +4,15 @@ import com.hp.cmcc.bboss.bdc.check.BaseCheck;
 import com.hp.cmcc.bboss.bdc.exception.CheckException;
 import com.hp.cmcc.bboss.bdc.pojo.BbdcTypeCdr;
 import com.hp.cmcc.bboss.bdc.utils.Tools;
-
+/**
+ * 
+ * @ClassName: BaseCheckImpl 
+ * @Description: 基础校验类，对单个字段进行校验
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:35:28 
+ *
+ */
 public class BaseCheckImpl implements BaseCheck {
 	private static CommonCheckImpl commonCheckImpl = new CommonCheckImpl();
 

@@ -1,5 +1,13 @@
 package com.hp.cmcc.bboss.bdc.exception;
-
+/**
+ * 
+ * @ClassName: CheckException 
+ * @Description: 校验失败类，封装校验失败的字段序号、错码和错误信息
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:47:17 
+ *
+ */
 public class CheckException extends Exception {
 
 	/**

@@ -16,7 +16,15 @@ import com.hp.cmcc.bboss.bdc.pojo.compare.BdcCompareResult;
 import com.hp.cmcc.bboss.bdc.service.CorpSmsMain;
 import com.hp.cmcc.bboss.bdc.service.MainThread;
 import com.hp.cmcc.bboss.bdc.utils.Tools;
-
+/**
+ * 
+ * @ClassName: CompareControl 
+ * @Description: 记录校验入口类，接受文件接口传入的数据，并对数据进行处理
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午9:28:14 
+ *
+ */
 @RestController
 public class CompareControl {
 	@Autowired

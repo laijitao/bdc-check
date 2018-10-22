@@ -17,6 +17,16 @@ import com.hp.cmcc.bboss.bdc.utils.BaseUtil;
 import com.hp.cmcc.bboss.bdc.utils.PubData;
 import com.hp.cmcc.bboss.bdc.utils.Tools;
 
+/**
+ * 
+ * @ClassName: CorpSmsMain 
+ * @Description: 记录校验的主类，将文件内容和校验规则以及文件名、文件序号传入，返回校验后
+ * 拼成的SQL语句（该SQL语句为insert语句的值得部分，即values后面的括号里面的值）
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午9:23:05 
+ *
+ */
 @Service
 public class CorpSmsMain {
 	private static Logger L = LoggerFactory.getLogger(CorpSmsMain.class);
@@ -58,13 +68,13 @@ public class CorpSmsMain {
 	    int size = fileBody.size();
 	    long lineNum = 1;
 	    for(int start = 0;start < size;start ++) {
-	    		HandleThread handleThread = new HandleThread(fileBody.get(start), doneList, fileName, lineNum++, tranId, checkNum, errInfoTableName);
-	    		try {
-					resultList.add(handleThread.call());
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-	    		lineNum++;
+    		HandleThread handleThread = new HandleThread(fileBody.get(start), doneList, fileName, lineNum++, tranId, checkNum, errInfoTableName);
+    		try {
+				resultList.add(handleThread.call());
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+    		lineNum++;
 	    }
 		
 	    Iterator<BdcComRecordCheckResult> iterator = resultList.iterator();

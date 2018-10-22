@@ -29,7 +29,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.hp.cmcc.bboss.bdc.utils.PubData.TimeStrFmt;
-
+/**
+ * 
+ * @ClassName: Tools 
+ * @Description: 工具类，封装一些常用的方法
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:53:15 
+ *
+ */
 public class Tools {
 	static Logger L = LoggerFactory.getLogger(Tools.class);
 	

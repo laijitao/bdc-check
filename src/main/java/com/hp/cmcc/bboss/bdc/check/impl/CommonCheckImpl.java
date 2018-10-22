@@ -8,14 +8,22 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import com.hp.cmcc.bboss.bdc.exception.CheckException;
 import com.hp.cmcc.bboss.bdc.pojo.BbdcTypeCdr;
 import com.hp.cmcc.bboss.bdc.utils.Tools;
-
+/**
+ * 
+ * @ClassName: CommonCheckImpl 
+ * @Description: 具体的校验类，对数据进行具体的校验
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:36:38 
+ *
+ */
 public class CommonCheckImpl implements com.hp.cmcc.bboss.bdc.check.CommonCheck {
 
 	@Override
 	public void uniqueCheck(JdbcTemplate jdbc,String field, BbdcTypeCdr cdr) throws CheckException  {
 		String sql = cdr.getDataFiller().trim().replace("?", field);
 		List<Map<String, Object>> list = jdbc.queryForList(sql);
-		if(list.size() != 0) {
+		if(list.size() > 1) {
 			throw new CheckException("1","违反主键唯一性");
 		}
 	}

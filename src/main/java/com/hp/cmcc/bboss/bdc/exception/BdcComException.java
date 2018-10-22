@@ -1,5 +1,13 @@
 package com.hp.cmcc.bboss.bdc.exception;
-
+/**
+ * 
+ * @ClassName: BdcComException 
+ * @Description: 对于校验不通过的记录，包装该记录的相关信息，用于生成记录级校验报告
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:31:48 
+ *
+ */
 public class BdcComException extends Exception{
 
 	/** 
@@ -88,6 +96,13 @@ public class BdcComException extends Exception{
 	public void setTranId(String tranId) {
 		this.tranId = tranId;
 	}
+	
+	/* (non-Javadoc)
+	 * <p>Title: toString</p> 
+	 * <p>Description: 重写tostring方法，返回拼接后的SQL 
+	 * @return 
+	 * @see java.lang.Throwable#toString() 
+	 */ 
 	@Override
 	public String toString() {
 		return id + ", '" + tableName + "','" + fileName + "',"

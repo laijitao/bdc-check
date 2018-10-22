@@ -12,7 +12,15 @@ import com.hp.cmcc.bboss.bdc.exception.BdcComException;
 import com.hp.cmcc.bboss.bdc.exception.CheckException;
 import com.hp.cmcc.bboss.bdc.pojo.BbdcTypeCdr;
 import com.hp.cmcc.bboss.bdc.utils.BaseUtil;
-
+/**
+ * 
+ * @ClassName: CheckAndCreateSqlStrImpl 
+ * @Description: 主校验类
+ * @company HPE  
+ * @author laijitao  
+ * @date 2018年10月22日 上午10:19:27 
+ *
+ */
 public class CheckAndCreateSqlStrImpl implements CheckAndCreateSqlStr {
 	
 	private static BaseUtil baseUtil = new BaseUtil();
@@ -21,6 +29,19 @@ public class CheckAndCreateSqlStrImpl implements CheckAndCreateSqlStr {
 	private static FieldHandle fieldHandle = new FieldHandleImpl();
 	private static RecordHandle recordHandle = new RecordHandleImpl();
 
+	/* (non-Javadoc)
+	 * <p>Title: checkAndCreateSqlStr</p> 
+	 * <p>Description: 校验单挑记录，并返回校验结果，校验不通过的将抛出异常
+	 * @param record
+	 * @param list
+	 * @param fileName
+	 * @param lineNum
+	 * @param tranId
+	 * @param checkNum
+	 * @param tableName
+	 * @return 校验后的拼接的SQL
+	 * @throws BdcComException 
+	 */ 
 	@Override
 	public String checkAndCreateSqlStr(String record, List<BbdcTypeCdr> list, String fileName, long lineNum,
 			String tranId, int checkNum, String tableName) throws BdcComException {
