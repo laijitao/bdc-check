@@ -9,11 +9,21 @@ import java.util.regex.Pattern;
 public class PubData {
 	
 	public static final String TASD_DONE_SQL = "SEQ_DB2F_ID.NEXTVAL, 'BDCERR', 'bdcerr','SELECT file_name"
-			+        ",'''','''','''','''',  tran_id FROM   bdc_cont_error a where a.tran_id=?'," + 
-			"        '$BDC_HOME/$BDC_DATA/data/bdc/cont/error', 1302, '200000','N','bl1', 'bdcpro','?'";
+			+        ",'''','''','''','''',  tran_id FROM bdc_cont_error a where a.tran_id=?'," + 
+			"        '$BDC_HOME/$BDC_DATA/data/bdc/cont/error', ?, '200000','N','bl1', 'bdcpro','?'";
 	public static final String TASD_SQL = "SEQ_DB2F_ID.NEXTVAL, 'BDCERR', 'bdcerr','SELECT file_name,l_num,s_num,error_code,description,"
 			+        "  tran_id FROM   bdc_cont_error a where a.tran_id=?'," + 
-			"        '$BDC_HOME/$BDC_DATA/data/bdc/cont/error', 1302, '200000','N','bl1', 'bdcpro','?'";
+			"        '$BDC_HOME/$BDC_DATA/data/bdc/cont/error', ?, '200000','N','bl1', 'bdcpro','?'";
+	
+	public static final String BDC_CONT_CORPSMS =  "D_CORPSMS";
+	public static final String BDC_CONT_GPRS =  "D_5300_0632_GPRS";
+	public static final String BDC_CONT_NFGPRSFEE =  "D_5300_0632_NFGPRSFEE";
+	public static final String BDC_CONT_GPRSAPNNI =  "D_5300_0632_GPRSAPNNI";
+	
+	public static final String D_CORPSMS =  "1302";
+	public static final String D_5300_0632_GPRS =  "1304";
+	public static final String D_5300_0632_NFGPRSFEE =  "1305";
+	public static final String D_5300_0632_GPRSAPNNI =  "1306";
 
 	public enum TimeStrFmt {
 		Fmt23, // yyyy-MM-dd HH:mm:ss.SSS

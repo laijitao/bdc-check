@@ -28,6 +28,7 @@ import java.util.regex.Pattern;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.hp.cmcc.bboss.bdc.pojo.BbdcTypeCdr;
 import com.hp.cmcc.bboss.bdc.utils.PubData.TimeStrFmt;
 /**
  * 
@@ -535,6 +536,20 @@ public class Tools {
 			str = str.replaceFirst(regex, s);
 		}
 		return str;
+	}
+	
+	public static String getServType(BbdcTypeCdr cdr){
+		switch(cdr.getValName().trim()){
+			case PubData.BDC_CONT_CORPSMS:
+				return PubData.D_CORPSMS;
+			case PubData.BDC_CONT_GPRS:
+				return PubData.D_5300_0632_GPRS;
+			case PubData.BDC_CONT_NFGPRSFEE:
+				return PubData.D_5300_0632_NFGPRSFEE;
+			case PubData.BDC_CONT_GPRSAPNNI:
+				return PubData.D_5300_0632_GPRSAPNNI;
+			default:return "";
+		}
 	}
 	
 }

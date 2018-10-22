@@ -119,9 +119,11 @@ public class MainThread {
 	    try {
 		    if(errRecs.size() == 0) {//检验全部通过则插入空值
 		    	errRecReport.add("null,null,null,null,null,null,null,'"+tranId+"'");
-		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_DONE_SQL	, "\\?", tranId,Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
+		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_DONE_SQL	, "\\?", 
+		    			tranId,Tools.getServType(doneList.get(1)),Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
 		    }else {//有校验不通过的则插入一条db2f任务
-		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_SQL	, "\\?", tranId,Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
+		    	taskStr = new String(baseUtil.getTaskSql(PubData.TASD_SQL	, "\\?", 
+		    			tranId,Tools.getServType(doneList.get(1)),Tools.getNowTime(PubData.TMFMT6)).getBytes("GBK"),"GBK");
 		    }
 	    } catch (UnsupportedEncodingException e) {
 	    	L.error("encode switch error!",e);
