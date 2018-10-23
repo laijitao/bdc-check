@@ -6,9 +6,9 @@ spring:
 
   cloud:
      config:
-        uri: http://10.248.50.227:18762/
+        uri: http://10.255.232.51:8710/
         name: BDC-CONT-CDR
-        profile: dev
+        profile: produce
         label: master
         fail-fast: true
 security:

@@ -15,8 +15,8 @@ public class PubData {
 			+        "  tran_id FROM   bdc_cont_error a where a.tran_id=?'," + 
 			"        '$BDC_HOME/$BDC_DATA/data/bdc/cont/error', ?, '200000','N','bl1', 'bdcpro','?'";
 	
-	public static final String BDC_CONT_CORPSMS =  "D_CORPSMS";
-	public static final String BDC_CONT_GPRS =  "D_5300_0632_GPRS";
+	public static final String BDC_CONT_CORPSMS =  "CORPSMS";
+	public static final String BDC_CONT_GPRS =  "D_5300_0632_GPRS/_";
 	public static final String BDC_CONT_NFGPRSFEE =  "D_5300_0632_NFGPRSFEE";
 	public static final String BDC_CONT_GPRSAPNNI =  "D_5300_0632_GPRSAPNNI";
 	

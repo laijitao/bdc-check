@@ -1,13 +1,20 @@
 package com.hp.cmcc.bboss.bdc.pojo.compare;
 
+import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 
-public class BdcCompareResult {
+public class BdcCompareResult implements Serializable{
 
-	private List<String> doneRec;
-	private List<String> errRec;
-	private List<String> errRecReport;
-	private List<String> taskSql;
+	/** 
+	 * @Fields serialVersionUID : TODO
+	 */ 
+	
+	private static final long serialVersionUID = 1L;
+	private List<String> doneRec = new LinkedList<String>();;
+	private List<String> errRec = new LinkedList<String>();;
+	private List<String> errRecReport = new LinkedList<String>();;
+	private List<String> taskSql = new LinkedList<String>();;
 	
 	public BdcCompareResult() {
 		super();
